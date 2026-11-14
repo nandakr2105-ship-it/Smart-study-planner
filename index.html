@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A simple study planner to organise subjects, topics, deadlines and study sessions.">
+  <title>StudyFlow — Smart Study Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="StudyFlow home"><span class="brand-mark">S</span> StudyFlow</a>
+      <span class="today-label" id="today-label"></span>
+    </header>
+
+    <main>
+      <section class="welcome">
+        <div>
+          <p class="eyebrow">YOUR PERSONAL STUDY SPACE</p>
+          <h1>Make today count.</h1>
+          <p class="muted">Plan your learning, one focused session at a time.</p>
+        </div>
+        <div class="focus-chip"><span class="pulse"></span> Small steps. Big progress.</div>
+      </section>
+
+      <section class="stats-grid" aria-label="Study overview">
+        <article class="stat-card"><span class="stat-label">Topics completed</span><strong id="completed-stat">0</strong><span class="stat-note">Keep building momentum</span></article>
+        <article class="stat-card"><span class="stat-label">Topics remaining</span><strong id="remaining-stat">0</strong><span class="stat-note">Your next steps</span></article>
+        <article class="stat-card"><span class="stat-label">Study time logged</span><strong id="hours-stat">0m</strong><span class="stat-note">Across your sessions</span></article>
+        <article class="stat-card"><span class="stat-label">Overall progress</span><strong id="progress-stat">0%</strong><div class="progress-track"><span id="overall-progress"></span></div></article>
+      </section>
+
+      <section class="layout-grid">
+        <div class="main-column">
+          <section class="panel">
+            <div class="section-heading">
+              <div><p class="eyebrow">STAY ORGANISED</p><h2>Your study topics</h2></div>
+              <button class="primary-button" id="show-topic-form" type="button">＋ Add topic</button>
+            </div>
+
+            <form id="topic-form" class="form-panel" hidden>
+              <div class="form-grid">
+                <label>Topic name<input id="topic-name" type="text" maxlength="90" placeholder="e.g. Database Normalization" required></label>
+                <label>Subject<input id="topic-subject" type="text" maxlength="50" placeholder="e.g. DBMS" required></label>
+                <label>Due date<input id="topic-date" type="date"></label>
+                <label>Priority<select id="topic-priority"><option value="Medium">Medium</option><option value="High">High</option><option value="Low">Low</option></select></label>
+              </div>
+              <div class="form-actions"><button class="secondary-button" id="cancel-topic" type="button">Cancel</button><button class="primary-button" type="submit">Save topic</button></div>
+            </form>
+
+            <div class="topic-toolbar">
+              <div class="filter-group" role="group" aria-label="Filter topics">
+                <button class="filter-button active" type="button" data-filter="All">All</button>
+                <button class="filter-button" type="button" data-filter="Pending">Pending</button>
+                <button class="filter-button" type="button" data-filter="Completed">Completed</button>
+              </div>
+              <input class="search-input" id="topic-search" type="search" placeholder="Search topics…" aria-label="Search topics">
+            </div>
+            <div id="topic-list" class="topic-list"></div>
+            <p id="topic-empty" class="empty-state">No topics yet. Add a topic to start planning your studies.</p>
+          </section>
+
+          <section class="panel session-panel">
+            <div class="section-heading">
+              <div><p class="eyebrow">BUILD A CONSISTENT HABIT</p><h2>Log a study session</h2></div>
+              <span class="session-icon">◷</span>
+            </div>
+            <form id="session-form" class="session-form">
+              <label>What did you study?<input id="session-subject" type="text" maxlength="60" placeholder="e.g. Operating Systems" required></label>
+              <label>Duration (minutes)<input id="session-duration" type="number" min="1" max="1440" placeholder="45" required></label>
+              <button class="primary-button" type="submit">＋ Log session</button>
+            </form>
+            <p class="helper-text">Record your focused study time. Your total is updated automatically.</p>
+            <div id="session-list" class="session-list"></div>
+          </section>
+        </div>
+
+        <aside class="side-column">
+          <section class="panel insight-panel">
+            <p class="eyebrow">SMART INSIGHT</p>
+            <h2 id="insight-title">Your plan starts here</h2>
+            <p id="insight-text" class="muted">Add a few topics and StudyFlow will highlight what needs your attention.</p>
+            <div class="insight-divider"></div>
+            <h3>Priority guide</h3>
+            <p class="priority-line"><span class="priority-dot high"></span> High — tackle first</p>
+            <p class="priority-line"><span class="priority-dot medium"></span> Medium — plan soon</p>
+            <p class="priority-line"><span class="priority-dot low"></span> Low — when you have time</p>
+          </section>
+
+          <section class="panel tips-panel">
+            <p class="eyebrow">A STUDY TIP</p>
+            <div class="tip-symbol">✦</div>
+            <h2>Focus on progress, not perfection.</h2>
+            <p class="muted">Try a focused 25-minute study block, then take a short break. Adjust the timing to what works for you.</p>
+          </section>
+
+          <section class="panel data-panel">
+            <h3>Your data</h3>
+            <p class="muted">Your topics and sessions are saved in this browser.</p>
+            <button id="export-data" class="secondary-button full-button" type="button">Export my data (.json)</button>
+            <button id="reset-data" class="text-button" type="button">Reset all planner data</button>
+          </section>
+        </aside>
+      </section>
+    </main>
+    <footer>Built with HTML, CSS & JavaScript <span>StudyFlow · Beginner project</span></footer>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
