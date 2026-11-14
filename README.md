@@ -1,56 +1,37 @@
-# StudyFlow — Smart Study Planner
+# StudyFlow: Smart Study Planner
 
-StudyFlow is a beginner-friendly study planning web app built with **HTML, CSS and vanilla JavaScript**. It helps students organise topics, set deadlines, track priorities and record study time.
+A study planning web app that helps students organise topics, set deadlines, track priorities and log study time. Built with **HTML, CSS and vanilla JavaScript**.
 
-## Features
+🔗 **Live demo:** https://nandakr2105-ship-it.github.io/Smart-study-planner/
 
-- Add topics with a subject, due date and priority.
-- Mark topics as completed or pending.
-- Filter topics and search by topic or subject.
-- View topic completion and total study-time statistics.
-- Get simple study suggestions based on overdue dates, upcoming deadlines and priority.
-- Log study sessions and see recent sessions.
-- Save data in the browser with `localStorage`.
-- Export planner data as a JSON backup.
-- Responsive layout for desktop and mobile.
+## ✨ Features
+- Add topics with subject, due date and priority
+- Mark topics as completed or pending
+- Search and filter topics
+- Progress and total study-time statistics
+- Smart suggestions based on overdue dates and priority
+- Log study sessions
+- Data saved in the browser with `localStorage`
+- Export your data as a JSON backup
+- Responsive on desktop and mobile
 
-## Run locally
+## 🧠 How it works
+All data is stored as JavaScript objects in an array. The app saves that array to `localStorage`, so your plan stays after refreshing. Suggestions are calculated by comparing due dates with today's date and sorting by priority.
 
-1. Download or clone this repository.
-2. Open the project folder.
-3. Open `index.html` in a modern web browser.
+## ▶️ Run locally
+1. Clone or download this repository
+2. Open `index.html` in your browser
 
-No installation, server or external JavaScript library is required. An internet connection is only needed for the optional Google Fonts styling; the app itself works offline.
+No installation needed.
 
-## Project structure
+## 🛠 Built with
+HTML · CSS · JavaScript · localStorage · Blob API
 
-```text
-smart-study-planner/
-├── index.html
-├── style.css
-├── script.js
-└── README.md
-```
+## 🔮 Future improvements
+- Weekly calendar view
+- Edit existing topics
+- Pomodoro timer
+- Charts for weekly study time
 
-## Concepts practised
-
-- HTML forms and semantic elements
-- CSS Grid, Flexbox and responsive design
-- JavaScript arrays, objects, functions and events
-- DOM manipulation
-- Filtering and searching data
-- Date handling
-- Browser local storage
-- JSON export using the Blob API
-
-## Future improvements
-
-- Add a weekly calendar view.
-- Add editing for existing topics.
-- Add a built-in Pomodoro timer.
-- Add charts for weekly study time.
-- Add cloud sync with a backend and database.
-
-## Author
-
-Nanda Kumar G (https://github.com/nandakr2105-ship-it)
+## 👤 Author
+Nandakumar G · [GitHub](https://github.com/nandakr2105-ship-it) · [LinkedIn](https://www.linkedin.com/in/nanda-kumar-007b73329)
