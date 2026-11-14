@@ -53,4 +53,4 @@ smart-study-planner/
 
 ## Author
 
-Add your name and GitHub profile here.
+Nanda Kumar G (https://github.com/nandakr2105-ship-it)
